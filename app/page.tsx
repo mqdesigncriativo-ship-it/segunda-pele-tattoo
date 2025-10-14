@@ -1,7 +1,9 @@
 export default function Site() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-emerald-400/30">
+      {/* CSS vars / brand accents */}
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
         :root{ --accent:#00bf7f; }
         .accent{ color: var(--accent) }
         .bg-accent{ background: var(--accent) }
@@ -11,20 +13,21 @@ export default function Site() {
         .title-glow{ text-shadow:0 8px 40px rgba(0,191,127,.15) }
         .street-vignette{ box-shadow: inset 0 0 160px rgba(0,0,0,.8) }
         .spray svg path{ filter: drop-shadow(0 6px 18px rgba(0,191,127,.18)); }
+        .display-font{ font-family:'Bebas Neue', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; letter-spacing:.01em }
       `}</style>
 
-      {/* NAV */}
+      {/* NAVBAR */}
       <header className="sticky top-0 z-50 backdrop-blur bg-black/70 border-b border-white/5">
         <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo-segunda-pele.png" alt="Segunda Pele Tattoo" className="h-8 w-auto" />
-            <span className="uppercase tracking-widest text-xs text-white/60">Ribeirão da Ilha • Florianópolis</span>
+            <img src="/logooo.png" alt="Símbolo Segunda Pele" className="h-8 w-auto" />
+            <span className="uppercase tracking-widest text-xs text-white/80">Estúdio Segunda Pele Tattoo</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#portfolio" className="opacity-80 hover:opacity-100">Portfólio</a>
             <a href="#projetos" className="opacity-80 hover:opacity-100">Projetos</a>
-            <a href="#agenda" className="opacity-80 hover:opacity-100">Agenda</a>
             <a href="#sobre" className="opacity-80 hover:opacity-100">Sobre</a>
+            <a href="#artista" className="opacity-80 hover:opacity-100">Artista</a>
             <a href="#produtos" className="opacity-80 hover:opacity-100">Produtos</a>
             <a href="#contato" className="opacity-80 hover:opacity-100">Contato</a>
           </nav>
@@ -32,43 +35,24 @@ export default function Site() {
         </div>
       </header>
 
-      {/* HERO street */}
+      {/* HERO */}
       <section id="home" className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[url('/street-bg.jpg')] bg-cover bg-center opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#00bf7f1a] via-transparent to-[#00bf7f0d] mix-blend-lighten" />
-          <div className="absolute inset-0 street-vignette" />
-          <div className="absolute inset-0 opacity-[0.06]">
-            <svg viewBox="0 0 800 400" className="w-full h-full">
-              <defs>
-                <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#ffffff"/>
-                  <stop offset="100%" stopColor="#00bf7f"/>
-                </linearGradient>
-              </defs>
-              <g fill="none" stroke="url(#g2)" strokeWidth="0.6">
-                {Array.from({length:80}).map((_,i)=> (
-                  <path key={i} d={`M-50 ${i*6} C ${150+i*3} ${50+i*4}, ${450-i*2} ${80+i*3}, 900 ${140+i*4}`} />
-                ))}
-              </g>
-            </svg>
-          </div>
-          <div className="spray absolute left-6 top-8 opacity-30">
-            <svg width="160" height="120" viewBox="0 0 200 150" fill="none">
-              <path d="M10 110 Q 60 20, 140 100" stroke="#00bf7f" strokeWidth="6" strokeLinecap="round"/>
-              <circle cx="150" cy="90" r="3" fill="#00bf7f"/>
-              <circle cx="160" cy="82" r="2" fill="#00bf7f"/>
-            </svg>
-          </div>
+        <div className="absolute inset-0 -z-10" aria-hidden>
+          <div className="absolute inset-0 bg-[url('/street-bg.jpg')] bg-cover bg-center opacity-80"/>
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#00bf7f1a] via-transparent to-[#00bf7f0d] mix-blend-lighten"/>
+          <div className="absolute inset-0 street-vignette"/>
         </div>
-        <div className="mx-auto max-w-7xl px-4 py-28 md:py-36 relative">
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight title-glow">
-            Arte como <span className="accent-gradient">segunda pele</span>
+        <div className="mx-auto max-w-7xl px-4 py-28 md:py-40 relative flex flex-col items-center text-center">
+          {/* Logo branca grande acima */}
+          <img src="/logo-segunda-pele.png" alt="Segunda Pele Tattoo" className="w-64 md:w-80 lg:w-[420px] h-auto opacity-95 mb-5"/>
+          {/* Headline em uma linha, mais street */}
+          <h1 className="display-font whitespace-nowrap text-5xl md:text-7xl lg:text-8xl font-black leading-none title-glow">
+            <span className="accent-gradient">Arte como segunda pele</span>
           </h1>
           <p className="mt-5 max-w-2xl text-white/70 text-lg">
             Estúdio imerso na natureza, reservado e focado em experiência. Coberturas, fluidez líquida, geometria, realismo e peças autorais do Marcelo Costa.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a href="#portfolio" className="bg-accent text-black px-5 py-3 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">Ver portfólio</a>
             <a href="#projetos" className="px-5 py-3 rounded-xl border border-white/10 hover:border-white/25 transition">Projetos disponíveis</a>
           </div>
@@ -89,6 +73,7 @@ export default function Site() {
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mt-8">
+          {/* Placeholders — substitua pelas suas imagens */}
           {Array.from({length:12}).map((_,i)=> (
             <a key={i} href="#" className="group relative overflow-hidden rounded-xl border border-white/10">
               <img src={`https://picsum.photos/seed/sp-${i}/800/1000`} alt="Trabalho" className="w-full h-full object-cover group-hover:scale-105 transition"/>
@@ -99,7 +84,7 @@ export default function Site() {
         </div>
       </section>
 
-      {/* PROJETOS */}
+      {/* PROJETOS DISPONÍVEIS */}
       <section id="projetos" className="mx-auto max-w-7xl px-4 py-16 md:py-24 border-t border-white/5">
         <div className="flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-bold">Projetos disponíveis</h2>
@@ -126,37 +111,24 @@ export default function Site() {
         </div>
       </section>
 
-      {/* AGENDA */}
-      <section id="agenda" className="mx-auto max-w-7xl px-4 py-16 md:py-24 border-t border-white/5">
-        <h2 className="text-2xl md:text-3xl font-bold">Agenda e eventos</h2>
-        <p className="text-white/60 mt-2">Últimos horários do mês e workshops no estúdio.</p>
-        <div className="mt-6 rounded-2xl overflow-hidden border border-white/10">
-          <iframe title="Agenda" src="https://calendar.google.com/calendar/embed?hl=pt_BR" className="w-full h-[520px]"/>
-        </div>
-      </section>
+      {/* AGENDA / EVENTOS */}
 
       {/* SOBRE */}
       <section id="sobre" className="mx-auto max-w-7xl px-4 py-16 md:py-24 border-t border-white/5">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold">Sobre o estúdio</h2>
-            <p className="text-white/70 mt-3 leading-relaxed">
-              A Segunda Pele Tattoo nasceu para unir técnica e espírito criativo. No nosso espaço, em meio ao verde do Ribeirão da Ilha, tudo é pensado para uma experiência reservada, confortável e imersiva. Marcelo Costa, há 23 anos no mercado, é referência em coberturas e em linguagens como fluidez líquida (suminagashi), linhas orgânicas, geometria, realismo e pontilhismo.
-            </p>
-            <ul className="mt-6 space-y-2 text-white/70 text-sm">
-              <li>• Atendimento por agendamento</li>
-              <li>• Projetos autorais e modulares</li>
-              <li>• Processo freehand quando a peça pede</li>
-            </ul>
-          </div>
-          <div className="relative rounded-2xl overflow-hidden border border-white/10">
-            <img src="https://images.unsplash.com/photo-1513908957990-b2790723edbf?q=80&w=1600&auto=format&fit=crop" alt="Estúdio" className="w-full h-full object-cover"/>
-            <div className="absolute inset-0 ring-1 ring-inset ring-white/5"/>
-          </div>
+        <h2 className="text-2xl md:text-3xl font-bold">Sobre o estúdio</h2>
+        <p className="text-white/70 mt-3 max-w-3xl">Nosso espaço fica no verde do Ribeirão da Ilha, pensado para uma experiência reservada, confortável e imersiva.</p>
+        {/* Grid 2x2 de fotos do estúdio */}
+        <div className="grid grid-cols-2 gap-3 md:gap-4 mt-6">
+          {[1,2,3,4].map(i=> (
+            <div key={i} className="relative rounded-2xl overflow-hidden border border-white/10">
+              <img src={`/studio/${i}.jpg`} alt={`Estúdio ${i}`} className="w-full h-48 md:h-60 lg:h-72 object-cover"/>
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/5"/>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* PRODUTOS */}
+      {/* PRODUTOS DIGITAIS */}
       <section id="produtos" className="mx-auto max-w-7xl px-4 py-16 md:py-24 border-t border-white/5">
         <div className="flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-bold">Produtos digitais</h2>
@@ -165,9 +137,8 @@ export default function Site() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8">
           {[
             {title:'TAT2PRICE',desc:'Sistema de automação de orçamento para tatuadores. Calcule por hora, tamanho e extras.',href:'https://tat2price.com/'},
-            {title:'Organic Brush Pack',desc:'13 pincéis autorais de fluidez líquida para Procreate.',href:'#'},
-            {title:'Templates & Mockups',desc:'Kits para apresentar projetos modulares ao cliente.',href:'#'},
-          ].map((p,i)=> (
+            {title:'Organic Brush Pack',desc:'13 pincéis autorais de fluidez líquida para Procreate.',href:'#'}
+          ].map((p,i)=> (.map((p,i)=> (
             <a key={i} href={p.href} className="group rounded-2xl border border-white/10 p-5 hover:border-white/25 transition">
               <div className="h-40 rounded-xl bg-gradient-to-br from-white/5 to-transparent mb-4"/>
               <h3 className="font-semibold">{p.title}</h3>
@@ -180,7 +151,7 @@ export default function Site() {
         </div>
       </section>
 
-      {/* CONTATO */}
+      {/* CONTATO / LOCALIZAÇÃO */}
       <section id="contato" className="mx-auto max-w-7xl px-4 py-16 md:py-24 border-t border-white/5">
         <div className="grid lg:grid-cols-2 gap-10">
           <div>
@@ -196,15 +167,16 @@ export default function Site() {
               </div>
             </form>
             <div className="mt-6 flex gap-4 text-sm text-white/60">
-              <a href="https://instagram.com" className="hover:text-white">Instagram</a>
-              <a href="https://tiktok.com" className="hover:text-white">TikTok</a>
+              <a href="https://www.instagram.com/m13.tattoo/" className="hover:text-white" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://www.tiktok.com/@m13tattoo?_t=ZM-90YS8Fbu1oy&_r=1" className="hover:text-white" target="_blank" rel="noreferrer">TikTok</a>
             </div>
           </div>
           <div>
             <div className="rounded-2xl overflow-hidden border border-white/10">
+              {/* Substitua o q param pela sua localização exata */}
               <iframe
                 title="Mapa do estúdio"
-                src="https://www.google.com/maps?q=Ribeir%C3%A3o%20da%20Ilha%2C%20Florian%C3%B3polis&output=embed"
+                src="https://www.google.com/maps?q=Rod.%20Baldicero%20Filomeno%2C%205151%20-%20Ribeir%C3%A3o%20da%20Ilha%2C%20Florian%C3%B3polis%20-%20SC%2C%2088064-002&output=embed"
                 className="w-full h-[420px]"
               />
             </div>
@@ -213,16 +185,21 @@ export default function Site() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* RODAPÉ */}
       <footer className="border-t border-white/5 py-10">
         <div className="mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img src="/logooo.png" alt="Segunda Pele" className="h-6 w-auto"/>
             <span className="text-sm text-white/60">© {new Date().getFullYear()} Segunda Pele Tattoo</span>
           </div>
-          <div className="text-sm text-white/60">Arte que vira pele • Floripa</div>
+          <div className="text-sm text-white/60">CNPJ: 34.812.595/0001-00 • Arte que vira pele • Floripa</div>
         </div>
       </footer>
+    {/* Botão flutuante do WhatsApp */}
+      <a href="https://wa.me/5548998214444" className="fixed left-3 bottom-4 z-50 inline-flex items-center justify-center h-12 w-12 rounded-full bg-accent text-black shadow-soft hover:opacity-90" aria-label="Falar no WhatsApp" target="_blank" rel="noreferrer">
+        <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor"><path d="M19.11 17.24c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.46-.16 0-.34-.02-.52-.02-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.28 0 1.34.98 2.64 1.12 2.82.14.18 1.93 2.95 4.72 4.02.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/><path d="M26.67 5.33C24.27 2.93 21.03 1.6 17.6 1.6 9.87 1.6 3.6 7.87 3.6 15.6c0 2.47.64 4.88 1.86 7.02L3.2 30.4l7.98-2.1c2.07 1.12 4.4 1.7 6.75 1.7 7.73 0 14-6.27 14-14 0-3.43-1.33-6.67-3.73-9.07zm-9.09 22.93c-2.17 0-4.3-.58-6.15-1.68l-.44-.26-4.73 1.24 1.26-4.6-.29-.47c-1.16-1.89-1.78-4.07-1.78-6.31 0-6.75 5.49-12.24 12.24-12.24 3.27 0 6.35 1.27 8.67 3.58 2.31 2.32 3.58 5.4 3.58 8.67 0 6.75-5.49 12.24-12.24 12.24z"/></svg>
+      </a>
     </div>
   )
 }
+
