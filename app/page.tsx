@@ -1,4 +1,3 @@
-
 export default function Site() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-emerald-400/30">
@@ -49,7 +48,7 @@ export default function Site() {
               </defs>
               <g fill="none" stroke="url(#g2)" strokeWidth="0.6">
                 {Array.from({length:80}).map((_,i)=> (
-                  <path key={i} d={\`M-50 \${i*6} C \${150+i*3} \${50+i*4}, \${450-i*2} \${80+i*3}, 900 \${140+i*4}\`} />
+                  <path key={i} d={`M-50 ${i*6} C ${150+i*3} ${50+i*4}, ${450-i*2} ${80+i*3}, 900 ${140+i*4}`} />
                 ))}
               </g>
             </svg>
@@ -92,7 +91,7 @@ export default function Site() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mt-8">
           {Array.from({length:12}).map((_,i)=> (
             <a key={i} href="#" className="group relative overflow-hidden rounded-xl border border-white/10">
-              <img src={\`https://picsum.photos/seed/sp-\${i}/800/1000\`} alt="Trabalho" className="w-full h-full object-cover group-hover:scale-105 transition"/>
+              <img src={`https://picsum.photos/seed/sp-${i}/800/1000`} alt="Trabalho" className="w-full h-full object-cover group-hover:scale-105 transition"/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition"/>
               <span className="absolute bottom-2 left-2 text-xs px-2 py-1 rounded-full bg-black/60 border border-white/10">Ver detalhe</span>
             </a>
@@ -110,7 +109,7 @@ export default function Site() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8">
           {Array.from({length:6}).map((_,i)=> (
             <div key={i} className="rounded-2xl overflow-hidden border border-white/10">
-              <img src={\`https://picsum.photos/seed/proj-\${i}/1000/800\`} alt="Projeto disponível" className="h-56 w-full object-cover" />
+              <img src={`https://picsum.photos/seed/proj-${i}/1000/800`} alt="Projeto disponível" className="h-56 w-full object-cover" />
               <div className="p-4">
                 <div className="flex items-center justify-between">
                   <h3 className="font-semibold">Projeto #{i+1}</h3>
