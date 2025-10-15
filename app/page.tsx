@@ -18,31 +18,37 @@ export default function Site() {
             <a href="#produtos" className="opacity-80 hover:opacity-100">Produtos</a>
             <a href="#contato" className="opacity-80 hover:opacity-100">Contato</a>
           </nav>
-          <a href="#contato" className="hidden md:inline-flex bg-accent text-black px-4 py-2 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">
+          <a href="#contato" className="hidden md:inline-flex bg-[#00bf7f] text-black px-4 py-2 rounded-xl font-semibold shadow-[0_10px_30px_rgba(0,0,0,.35)] hover:opacity-90 transition">
             Agendar
           </a>
         </div>
       </header>
 
-      {/* HERO central */}
+      {/* HERO */}
       <section id="home" className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10" aria-hidden>
           <div className="absolute inset-0 bg-[url('/street-bg.jpg')] bg-cover bg-center opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-tr from-[#00bf7f1a] via-transparent to-[#00bf7f0d] mix-blend-lighten" />
-          <div className="absolute inset-0 street-vignette" />
+          <div className="absolute inset-0 shadow-[inset_0_0_160px_rgba(0,0,0,.8)]" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 py-28 md:py-40 relative flex flex-col items-center text-center">
           <img src="/logo-segunda-pele.png" alt="Segunda Pele Tattoo" className="w-64 md:w-80 lg:w-[420px] h-auto opacity-95 mb-5" />
-          <h1 className="display-font whitespace-nowrap text-5xl md:text-7xl lg:text-8xl font-black leading-none title-glow">
-            <span className="accent-gradient">Arte como segunda pele</span>
+          <h1 className="font-[700] [font-family:'Bebas_Neue',system-ui] whitespace-nowrap text-5xl md:text-7xl lg:text-8xl leading-none drop-shadow-[0_8px_40px_rgba(0,191,127,.15)]">
+            <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,#00bf7f, #35f1c5 60%, #00bf7f)]">
+              Arte como segunda pele
+            </span>
           </h1>
           <p className="mt-5 max-w-2xl text-white/70 text-lg">
             Estúdio imerso na natureza, reservado e focado em experiência. Coberturas, fluidez líquida, geometria, realismo e peças autorais do Marcelo Costa.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <a href="#portfolio" className="bg-accent text-black px-5 py-3 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">Ver portfólio</a>
-            <a href="#projetos" className="px-5 py-3 rounded-xl border border-white/10 hover:border-white/25 transition">Projetos disponíveis</a>
+            <a href="#portfolio" className="bg-[#00bf7f] text-black px-5 py-3 rounded-xl font-semibold shadow-[0_10px_30px_rgba(0,0,0,.35)] hover:opacity-90 transition">
+              Ver portfólio
+            </a>
+            <a href="#projetos" className="px-5 py-3 rounded-xl border border-white/10 hover:border-white/25 transition">
+              Projetos disponíveis
+            </a>
           </div>
         </div>
       </section>
