@@ -1,27 +1,14 @@
 export default function Site() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-emerald-400/30">
-      {/* CSS vars / brand accents */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-        :root{ --accent:#00bf7f; }
-        .accent{ color: var(--accent) }
-        .bg-accent{ background: var(--accent) }
-        .ring-accent{ --tw-ring-color: var(--accent) }
-        .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.35) }
-        .accent-gradient{ background:linear-gradient(90deg,#00bf7f 0%,#35f1c5 60%,#00bf7f 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-        .title-glow{ text-shadow:0 8px 40px rgba(0,191,127,.15) }
-        .street-vignette{ box-shadow: inset 0 0 160px rgba(0,0,0,.8) }
-        .spray svg path{ filter: drop-shadow(0 6px 18px rgba(0,191,127,.18)); }
-        .display-font{ font-family:'Bebas Neue', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; letter-spacing:.01em }
-      `}</style>
-
       {/* NAVBAR */}
       <header className="sticky top-0 z-50 backdrop-blur bg-black/70 border-b border-white/5">
         <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/logooo.png" alt="Símbolo Segunda Pele" className="h-8 w-auto" />
-            <span className="uppercase tracking-widest text-xs text-white/80">Estúdio Segunda Pele Tattoo</span>
+            <span className="uppercase tracking-widest text-xs text-white/80">
+              Estúdio Segunda Pele Tattoo
+            </span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#portfolio" className="opacity-80 hover:opacity-100">Portfólio</a>
@@ -31,21 +18,22 @@ export default function Site() {
             <a href="#produtos" className="opacity-80 hover:opacity-100">Produtos</a>
             <a href="#contato" className="opacity-80 hover:opacity-100">Contato</a>
           </nav>
-          <a href="#contato" className="hidden md:inline-flex bg-accent text-black px-4 py-2 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">Agendar</a>
+          <a href="#contato" className="hidden md:inline-flex bg-accent text-black px-4 py-2 rounded-xl font-semibold shadow-soft hover:opacity-90 transition">
+            Agendar
+          </a>
         </div>
       </header>
 
-      {/* HERO */}
+      {/* HERO central */}
       <section id="home" className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10" aria-hidden>
-          <div className="absolute inset-0 bg-[url('/street-bg.jpg')] bg-cover bg-center opacity-80"/>
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#00bf7f1a] via-transparent to-[#00bf7f0d] mix-blend-lighten"/>
-          <div className="absolute inset-0 street-vignette"/>
+          <div className="absolute inset-0 bg-[url('/street-bg.jpg')] bg-cover bg-center opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#00bf7f1a] via-transparent to-[#00bf7f0d] mix-blend-lighten" />
+          <div className="absolute inset-0 street-vignette" />
         </div>
+
         <div className="mx-auto max-w-7xl px-4 py-28 md:py-40 relative flex flex-col items-center text-center">
-          {/* Logo branca grande acima */}
-          <img src="/logo-segunda-pele.png" alt="Segunda Pele Tattoo" className="w-64 md:w-80 lg:w-[420px] h-auto opacity-95 mb-5"/>
-          {/* Headline em uma linha, mais street */}
+          <img src="/logo-segunda-pele.png" alt="Segunda Pele Tattoo" className="w-64 md:w-80 lg:w-[420px] h-auto opacity-95 mb-5" />
           <h1 className="display-font whitespace-nowrap text-5xl md:text-7xl lg:text-8xl font-black leading-none title-glow">
             <span className="accent-gradient">Arte como segunda pele</span>
           </h1>
