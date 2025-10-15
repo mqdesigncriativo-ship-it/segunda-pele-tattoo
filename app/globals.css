@@ -5,3 +5,21 @@
 
 :root{ --accent:#00bf7f; }
 html,body{ background:#000; color:#fff; }
+/* Fonte street + utilitários da marca */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root { --accent:#00bf7f; }
+
+/* utilitários */
+.accent{ color: var(--accent); }
+.bg-accent{ background: var(--accent); }
+.ring-accent{ --tw-ring-color: var(--accent); }
+.shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.accent-gradient{
+  background:linear-gradient(90deg,#00bf7f 0%,#35f1c5 60%,#00bf7f 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.title-glow{ text-shadow:0 8px 40px rgba(0,191,127,.15); }
+.street-vignette{ box-shadow: inset 0 0 160px rgba(0,0,0,.8); }
+.spray svg path{ filter: drop-shadow(0 6px 18px rgba(0,191,127,.18)); }
+.display-font{ font-family:'Bebas Neue', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; letter-spacing:.01em; }
